@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>重力加速度传感器制作完毕</title>
+  
+    <meta name="author" content="靖天">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+    <!--[if lt IE 9]>
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le styles -->
+    <link href="/assets/twitter/stylesheets/bootstrap.min.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/stylesheets/style.css" type="text/css" rel="stylesheet" media="all">
+<link href="/assets/twitter/widgets/google_prettify/stylesheets/twitter-bootstrap.css" type="text/css" rel="stylesheet" media="all">
+ 
+
+    <!-- Le fav and touch icons -->
+  <!-- Update these with your own images
+    <link rel="shortcut icon" href="images/favicon.ico">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
+  -->
+  </head>
+
+  <body>
+
+    <div class="navbar">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="/">一个热爱木工的软件工程师</a>
+          <ul class="nav">
+            
+              
+
+
+  <li><a href="/archive">Archive</a></li>
+
+
+            
+              
+
+
+  <li><a href="/tags">Tags</a></li>
+
+
+            
+              
+
+
+  <li><a href="/categories">Categories</a></li>
+
+
+            
+              
+
+
+  <li><a href="/pages">Pages</a></li>
+
+
+            
+              
+
+
+  <li><a href="/about">About Me</a></li>
+
+
+            
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="content">
+        <div class="page-header">
+  <h1>重力加速度传感器制作完毕 </h1>
+</div>
+
+<div class="row">
+  <div class="span8">
+    
+<div>&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  最近两天有点时间了,加上器件什么的都准备妥当了,就自己花了个很简单的PCB板子,把以前在ST申请的重力加速度芯片搭建成开发平台,打算做点什么有意思的东西.<br>
+<img class="imgbox" src="http://iwood.qiniudn.com/media/legacy/i_f12.gif" width="800" ></img>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  器件准备好了,剩下的就是画图做板子了.学校的条件不是很好,只能用单层的铜板自己腐蚀线路那种方式.不过我这个东西也很简单,不需要多么复杂的走线.之前没有用过Protel,简单学了学,感觉布线是个很复杂的工作,需要很高的技巧.不过似乎其中有很多问题可以用路径问题解决,似乎可以用计算机来自动布线,这方面我没用过,也不知道有没有.但是在许多接口需要互联的时候,判定他们是否能在一层板子上完成,这个功能应该是可以软件实现的吧..<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+<img class="imgbox" src="http://iwood.qiniudn.com/media/legacy/12bd7fd922ce20eb38012f36.jpg" width="800" ></img>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  板子走线如上图. 很业余,毕竟不是电子系的.不过感觉接触些电子对嵌入式的帮助是很直接的. 比如我现在做的这个东西,如果我自己不做,又想玩玩,那将会比较痛苦.起码学了这些东西,可以把自己的简单想法变为现实.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  现在电路板已经做好了,调试也通过了.加速度传感器能输出X,Y,Z三个方向的加速度的模拟量,通俗点就是通过电压高低来表示加速度大小.通过AD转换把电压值读出,再根据芯片的设定转换为加速度值.<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  我使用NRF9E5来作为处理器.NRF9E5实际是一款无线电收发芯片,是以前一个项目中使用过的.它具有C51的内核,无线电收发功能,还有4路10位AD.完全能够满足我这个系统的需求. 我要求的功能就是AD转换测量加速度的值通过无线方式发送到计算机,再做进一步的处理.<br>
+<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  以后要做的工作就是数据的采集和分析了.这也是为什么我把这篇文章归入模式识别的原因.我期望通过加速度来识别人的动作.这个应用在模式识别领域应该是十分简单的.相对于图像识别,人脸识别等技术来说,这个应用能采集到的数据是十分准确的,没有那么多的噪声.是一组时间离散的加速度数值.不过对于我来说还是一个很大的挑战.对于数学知识缺乏的我也是个磨练.(大一高数都没有好好学,现在还得自己补这些,看来出来混迟早都得还啊...哈哈)<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  <br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  不过现在时间也不是那么多,这个工作肯定是一个长期而艰巨的工作哈.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;  最后补个做好的板子的张片,懒得拿相机,拿手机拍的,不是很清晰.<br>
+&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;
+<img class="imgbox" src="http://iwood.qiniudn.com/media/legacy/99491c30a6de9a9ba8018e0a.jpg" width="800" ></img>
+
+    <hr>
+    <div class="pagination">
+      <ul>
+        <ul>
+          
+            <li class="prev"><a href="/blog/2007/02/12/2007-02-12-1/" title="中国武侠专用英语">&larr; Previous</a></li>
+          
+          
+
+            <li><a href="/archive">Archive</a></li>
+
+          
+            <li class="next"><a href="/blog/2007/02/05/2007-02-05-1/" title="美国《信息周刊》:有史以来最伟大的12款软件">Next &rarr;</a></li>
+          
+          
+        </ul>
+      </ul>
+    </div>
+    <hr>
+    
+<div id="disqus_thread"></div>
+<script>
+    var disqus_developer = 1;
+    var disqus_shortname = 'ifq'; // required: replace example with your forum shortname
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">blog comments powered by <span class="logo-disqus">Disqus</span></a>
+
+  </div>
+  
+  <div class="span4">
+    <h4>Published</h4>
+    <div class="date"><span>2007-02-07</span></div>
+    <br>
+    <h4>Categories</h4>
+    <ul class="tag_box">
+    
+      <li>
+  <a href="/categories/#legacy-ref">legacy <span>279</span></a>
+</li>
+    
+    </ul>
+    <br>
+    <h4>Tags</h4>
+    <ul class="tag_box">
+    
+    </ul>
+  </div>
+</div>
+
+      </div>
+
+      <footer>
+        <p>&copy; 靖天 2013 
+          with help from <a href="http://github.com/wendal/gor" target="_blank" title="Gor -- Fast Blog">Gor</a>
+          and <a href="http://twitter.github.com/bootstrap/" target="_blank">Twitter Bootstrap</a>
+		  and Idea from <a href="http://ruhoh.com" target="_blank" title="The Definitive Technical Blogging Framework">ruhoh</a>
+        </p>
+      </footer>
+
+    </div> <!-- /container -->
+
+    
+<script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/188.0.0/prettify.js"></script>
+<script>
+  var pres = document.getElementsByTagName("pre");
+  for (var i=0; i < pres.length; ++i) {
+    pres[i].className = "prettyprint linenums";
+  }
+  prettyPrint();
+</script>
+
+    
+<script>
+    var _gaq=[['_setAccount','UA-33860711-1'],['_trackPageview']];
+    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+    s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+  </body>
+</html>
