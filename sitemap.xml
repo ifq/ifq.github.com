@@ -179,12 +179,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2010/06/28/2010-06-28-2/</loc>
+		<loc>http://iwood.co.nr/blog/2010/06/28/2010-06-28-1/</loc>
 		<lastmod>2010-06-28</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2010/06/28/2010-06-28-1/</loc>
+		<loc>http://iwood.co.nr/blog/2010/06/28/2010-06-28-2/</loc>
 		<lastmod>2010-06-28</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -299,12 +299,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2009/02/25/2009-02-25-1/</loc>
+		<loc>http://iwood.co.nr/blog/2009/02/25/2009-02-25-2/</loc>
 		<lastmod>2009-02-25</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2009/02/25/2009-02-25-2/</loc>
+		<loc>http://iwood.co.nr/blog/2009/02/25/2009-02-25-1/</loc>
 		<lastmod>2009-02-25</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -389,12 +389,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2008/09/23/2008-09-23-1/</loc>
+		<loc>http://iwood.co.nr/blog/2008/09/23/2008-09-23-2/</loc>
 		<lastmod>2008-09-23</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2008/09/23/2008-09-23-2/</loc>
+		<loc>http://iwood.co.nr/blog/2008/09/23/2008-09-23-1/</loc>
 		<lastmod>2008-09-23</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -864,18 +864,13 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/09/13/2007-09-13-1/</loc>
-		<lastmod>2007-09-13</lastmod>
-		<changefreq>weekly</changefreq>
-	</url>
-	<url>
 		<loc>http://iwood.co.nr/blog/2007/09/13/2007-09-13-2/</loc>
 		<lastmod>2007-09-13</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/09/12/2007-09-12-2/</loc>
-		<lastmod>2007-09-12</lastmod>
+		<loc>http://iwood.co.nr/blog/2007/09/13/2007-09-13-1/</loc>
+		<lastmod>2007-09-13</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
@@ -884,12 +879,17 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/09/11/2007-09-11-1/</loc>
-		<lastmod>2007-09-11</lastmod>
+		<loc>http://iwood.co.nr/blog/2007/09/12/2007-09-12-2/</loc>
+		<lastmod>2007-09-12</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
 		<loc>http://iwood.co.nr/blog/2007/09/11/2007-09-11-2/</loc>
+		<lastmod>2007-09-11</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://iwood.co.nr/blog/2007/09/11/2007-09-11-1/</loc>
 		<lastmod>2007-09-11</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -954,22 +954,22 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/28/2007-08-28-2/</loc>
-		<lastmod>2007-08-28</lastmod>
-		<changefreq>weekly</changefreq>
-	</url>
-	<url>
 		<loc>http://iwood.co.nr/blog/2007/08/28/2007-08-28-1/</loc>
 		<lastmod>2007-08-28</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/27/2007-08-27-2/</loc>
-		<lastmod>2007-08-27</lastmod>
+		<loc>http://iwood.co.nr/blog/2007/08/28/2007-08-28-2/</loc>
+		<lastmod>2007-08-28</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
 		<loc>http://iwood.co.nr/blog/2007/08/27/2007-08-27-1/</loc>
+		<lastmod>2007-08-27</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://iwood.co.nr/blog/2007/08/27/2007-08-27-2/</loc>
 		<lastmod>2007-08-27</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -984,7 +984,7 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/23/2007-08-23-2/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/23/2007-08-23-3/</loc>
 		<lastmod>2007-08-23</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -994,12 +994,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/23/2007-08-23-3/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/23/2007-08-23-4/</loc>
 		<lastmod>2007-08-23</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/23/2007-08-23-4/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/23/2007-08-23-2/</loc>
 		<lastmod>2007-08-23</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1024,12 +1024,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/17/2007-08-17-2/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/17/2007-08-17-1/</loc>
 		<lastmod>2007-08-17</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/17/2007-08-17-1/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/17/2007-08-17-2/</loc>
 		<lastmod>2007-08-17</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1069,12 +1069,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/08/2007-08-08-2/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/08/2007-08-08-1/</loc>
 		<lastmod>2007-08-08</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/08/08/2007-08-08-1/</loc>
+		<loc>http://iwood.co.nr/blog/2007/08/08/2007-08-08-2/</loc>
 		<lastmod>2007-08-08</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1184,12 +1184,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/05/30/2007-05-30-1/</loc>
+		<loc>http://iwood.co.nr/blog/2007/05/30/2007-05-30-2/</loc>
 		<lastmod>2007-05-30</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/05/30/2007-05-30-2/</loc>
+		<loc>http://iwood.co.nr/blog/2007/05/30/2007-05-30-1/</loc>
 		<lastmod>2007-05-30</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1344,12 +1344,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/02/03/2007-02-03-1/</loc>
+		<loc>http://iwood.co.nr/blog/2007/02/03/2007-02-03-2/</loc>
 		<lastmod>2007-02-03</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2007/02/03/2007-02-03-2/</loc>
+		<loc>http://iwood.co.nr/blog/2007/02/03/2007-02-03-1/</loc>
 		<lastmod>2007-02-03</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1449,12 +1449,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2006/12/16/2006-12-16-2/</loc>
+		<loc>http://iwood.co.nr/blog/2006/12/16/2006-12-16-3/</loc>
 		<lastmod>2006-12-16</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2006/12/16/2006-12-16-3/</loc>
+		<loc>http://iwood.co.nr/blog/2006/12/16/2006-12-16-2/</loc>
 		<lastmod>2006-12-16</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1484,12 +1484,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2006/12/04/2006-12-04-3/</loc>
+		<loc>http://iwood.co.nr/blog/2006/12/04/2006-12-04-2/</loc>
 		<lastmod>2006-12-04</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2006/12/04/2006-12-04-2/</loc>
+		<loc>http://iwood.co.nr/blog/2006/12/04/2006-12-04-3/</loc>
 		<lastmod>2006-12-04</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
@@ -1499,12 +1499,12 @@
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2006/11/30/2006-11-30-1/</loc>
+		<loc>http://iwood.co.nr/blog/2006/11/30/2006-11-30-2/</loc>
 		<lastmod>2006-11-30</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2006/11/30/2006-11-30-2/</loc>
+		<loc>http://iwood.co.nr/blog/2006/11/30/2006-11-30-1/</loc>
 		<lastmod>2006-11-30</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
