@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>test-gor</title>
+    <title>正式切换到gor</title>
   
     <meta name="author" content="靖天">
 
@@ -78,24 +78,36 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>test-gor </h1>
+  <h1>正式切换到gor </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>眼见不一定为实，记忆也同样不一定可靠。在诉讼案件中，目击证人的回忆性证词不真实的案例不在少数。日前，麻省理工学院（MIT）的科学家成功将虚假记忆植入小鼠的脑部，并发现这些虚假记忆与真实记忆非常相像。研究结果发表在《科学》上。</p>
+    <p>切换到github做博客也有将近一年时间了。之前一直用的是octopress作为博客的引擎。其他都挺好，有一个问题很头大：<strong>慢！</strong></p>
 
-<p>情景记忆是涉及空间、时间及具体情景的记忆。为了探究情景记忆的表征能否结合外部刺激产生新的记忆，诺贝尔生理学奖获得者、皮考尔学习与记忆研究所的神经生物学教授利根川进（Susumu Tonegawa）和同事使用光遗传学（Optogenetics）技术，向小鼠的大脑里植入虚假的情景记忆，上演了一场“盗忆空间”（下图）。</p>
+<p>加上从baidu那边转过来的博客（当然，大部分是废话，*但是废话放30年后说不定会有价值*）,目前有309篇博客。每次用octopress来生成的时候需要4,5分钟，尽管可以用小技巧单独先生成个别文件用来preview，但是还是慢。。让人没有了更新的欲望。多次在网上探寻加速的方法均无果。最近在折腾blog的时候，又等的发狂了，在网上搜索一通，发现了<a href="https://github.com/wendal/gor">gor</a>，试用之后精神为之一震啊！</p>
 
-<p>基本试验流程：在服用多西环素（Dox）过程中，受试小鼠体内光敏感通道蛋白不被表达。停止服用多西环素后，小鼠被带到房间A，光敏感通道蛋白对形成记忆的细胞进行标记。翌日，小鼠被置于房间B进行电击，使之形成恐惧记忆，同时利用蓝光脉冲激活光敏感通道蛋白标记的细胞。第三天，小鼠回到房间A，随后被置于房间C。红色代表编码在房间A中的情景记忆、并被标记的神经元；灰色、白色分别代表编码在房间B、C中的情景记忆的神经元。星号表示被所在情景或光脉冲激活的神经元。图片来源：Steve Ramirez et al. Creating a False Memory in the Hippocampus. Science. 2013.341(6144):387-91</p>
+<p>同样300+篇博客，用ruby的octopress需要4,5分钟，而使用<a href="http://golang.org">go</a>的gor只需要数秒！！。这种差距也让我对go语言产生了兴趣（最近正在疯狂学习中）。看来国人也能出精品啊～一定得支持，于是果断换用gor。</p>
 
-<p>记忆形成时，c-fos基因会被表达。通过基因操作，研究者使小鼠齿状回（Dentate gyrus）的神经细胞在表达c-fos基因时，同步表达光敏感通道基因——通过这种方式，神经细胞在编码记忆时就被光敏感通道“标记”了。光敏感通道蛋白（Channelrhodopsin）在受到蓝光刺激时能够激活所在的神经元。因此，研究者可以通过蓝光干预与情景记忆有关的神经活动。</p>
+<p><img class="imgbox" src="http://iwood.qiniudn.com/media/frontpage.png"  alt="go语言形象代言人" width="600" /></p>
 
-<p>首先，研究者将小鼠置于一间房间A中，让它们悠然自得地呆着。小鼠会自然产生对房间A的情景记忆，而记录这些记忆的细胞则被随之表达的光敏感通道所标记。第二天，这些小鼠被带到一间与A截然不同的房间B里。在那里呆了一会儿后，小鼠的脚会突然遭受一下电击。同时，研究者利用蓝光激活昨天编码房间A记忆的神经元。小鼠因感到恐惧而僵住，并形成记忆。第三天，小鼠旧地重游，回到最初悠然自得的房间A。然而这次，它们也害怕得僵住了——尽管它们从未在这间房被电击过。这表明，小鼠形成了虚假的记忆，认为自己曾经在房间A遭受过电击，从而表现出恐惧应答。而当被置于另一房间C时，这些小鼠则不会僵住。</p>
+<h2><a style="display: block;" name="切换准备" href="#切换准备"></a>切换准备</h2>
 
-<p>研究者还发现，在小鼠回忆起虚假记忆后，杏仁核中的神经活动会立即上升到回忆真实记忆时的水平。杏仁核是处理恐惧情绪的脑区，接收来自海马的记忆信息。利根川进指出，无论记忆是真实抑或虚假，大脑回忆这些记忆的神经机制都是相同的。</p>
+<h3>补齐yml标签</h3>
 
-<p>接下来，研究团队将探讨记忆在大脑里是如何被扭曲的。</p>
+<p>octopress下，识别博客的日期是通过文件名前边包含年月日来实现的。而gor下面得在文件头部插入 <code>date</code> 标签，因此需要做下转换。本来用sed之类的写个脚本就搞定了，但是为了学习go语言，强迫用go写了一个<a href="https://gist.github.com/6103416">转换的脚本</a>。</p>
+
+<h3>图片文件重整</h3>
+
+<p>图片问题其实不是切换到gor直接导致的，而是在熟悉gor的过程中和<a href="https://gist.github.com/6103416">别人讨论的成果</a>。有人提到图片也放到github中管理会十分臃肿，应该放到外部管理。思考了以下也对，随便加点图片就200M了，长此以往肯定是不行的。加之国内的网速上传github本来就比较慢，所以还是分开管理比较好。</p>
+
+<p>找寻外部存储空间，一开始只找了在线相册，不是不支持外链，就是国内访问有问题。后来找到<a href="https://gist.github.com/6103416">国内的云存储平台七牛</a>，解决了所有问题。不但外链没有问题（专门就是干这个的），而且上传也很方便（linux下有命令行工具批量同步），而且外链的地址也和本地目录树相同，方便生成<code>&lt;img&gt;</code>。</p>
+
+<h3>permalink问题</h3>
+
+<p>octopress下面，permalink设置为 <code>/blog/:year/:month/:day/:title/</code> 的时候，实际生成的地址是以文件名中出去日期的部分结尾，而在gor下面，则是以文章中实际的<code>title:</code>标题。这会导致链接地址与以前不一致。查了一下，改用 <code>/blog/:year/:month/:day/:filename/</code>，并把 md 文件里的日期部分去掉，从而保持url不变。</p>
+
+<p>TFL。</p>
 
     <hr>
     <div class="pagination">
@@ -141,13 +153,21 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#default-ref">default <span>3</span></a>
+  <a href="/categories/#binary-ref">binary <span>10</span></a>
 </li>
     
     </ul>
     <br>
     <h4>Tags</h4>
     <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#gor-ref">gor <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#golang-ref">golang <span>1</span></a>
+</li>
     
     </ul>
   </div>
