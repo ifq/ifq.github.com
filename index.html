@@ -89,6 +89,22 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/2013/08/12/git-del-file-from-repo/">如何从git repo里删除一个文件</a> <span class="date">2013-08-12</span></h3>
+
+  <p>有时候一些敏感信息或者垃圾信息会被无意添加到git repo里想要删除。通过 <code>git rm filename</code> 只能表皮上删除一个文件，如果希望彻底删除需要其他的方式。</p>
+
+<pre><code>git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch &lt;filename&gt;' \
+--prune-empty --tag-name-filter cat -- --all
+</code></pre>
+
+
+  <div class="more">
+    <a href="/blog/2013/08/12/git-del-file-from-repo/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/blog/2013/08/05/alasken-saw-mill/">油锯开板-- alaskan saw mill</a> <span class="date">2013-08-05</span></h3>
 
   <h2><a style="display: block;" name="介绍" href="#介绍"></a>介绍</h2>
@@ -252,34 +268,6 @@ git remote add octopress https://github.com/imathis/octopress.git
 
   <div class="more">
     <a href="/blog/2012/10/29/upgrade-octopress/" class="btn">read more..</a>
-  </div>
-</div>
-
-<div class="post">
-  <h3 class="title"><a href="/blog/2012/10/28/roubo-workbench-5/">Roubo Style Workbench - 靖天木工桌 5/5</a> <span class="date">2012-10-28</span></h3>
-
-  <p>
-敢鸭子上架，尽管有各种的问题，但是总装的时刻还是来了~ 上周末终于把 End vise 和 leg vise 都装上了；所有腿部的横梁也都固定了；靖天木工桌终于站起来了~ 以下的内容比较凌乱，请读者自行缓存并排序~
-</p>
-<p>
-腿钳使用两张3cm的板子粘接而成，下面的那根垂直的我不知道该怎么称呼，就叫slide guide吧。。是用木地板的废料做的。
-</p>
-<p>
-<img class="imgbox" src="http://iwood.qiniudn.com/media/2012-10-28/PA214446.JPG" alt=""  width="600" >腿钳刚做好的样子</img>
-</p>
-<p>
-<img class="imgbox" src="http://iwood.qiniudn.com/media/2012-10-28/PA214447.JPG" alt=""  width="600" >起初担心那根guide不能很好的垂直于面板，结果却异常的好</img>
-</p>
-<p>
-等待leg vise粘接的过程中，开始安装end vise。考虑尽量加大夹持深度，所以vise没有直接装在桌面底面，而是加了6cm的木块垫低。（实践证明效果不怎么好）
-</p>
-<p>
-<img class="imgbox" src="http://iwood.qiniudn.com/media/2012-10-28/PA214448.JPG" alt=""  width="600" >end vise 装上的效果，此时还缺少一边的夹持面</img>
-</p>
-
-
-  <div class="more">
-    <a href="/blog/2012/10/28/roubo-workbench-5/" class="btn">read more..</a>
   </div>
 </div>
 

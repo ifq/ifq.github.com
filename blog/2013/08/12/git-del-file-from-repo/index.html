@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>广告啊~谁要Mini SD卡啊?谁要Sony 512记忆棒啊?便宜卖拉~</title>
+    <title>如何从git repo里删除一个文件</title>
+  
+    <meta name="description" content="如何彻底删除一个文件">
   
     <meta name="author" content="靖天">
 
@@ -78,31 +80,40 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>广告啊~谁要Mini SD卡啊?谁要Sony 512记忆棒啊?便宜卖拉~ </h1>
+  <h1>如何从git repo里删除一个文件 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    
-<div>广告啊~谁要Mini SD卡啊?谁要Sony 512记忆棒啊?便宜卖拉~<br>
-SD卡是手机用了半年的,记忆棒是相机的基本没有用过~<br>
-有需要的同志请留言哈~<br>
-最好是成都的~<br>
-完毕~</div>
+    <p>有时候一些敏感信息或者垃圾信息会被无意添加到git repo里想要删除。通过 <code>git rm filename</code> 只能表皮上删除一个文件，如果希望彻底删除需要其他的方式。</p>
+
+<pre><code>git filter-branch --force --index-filter \
+'git rm --cached --ignore-unmatch &lt;filename&gt;' \
+--prune-empty --tag-name-filter cat -- --all
+</code></pre>
+
+<p><code>&lt;filename&gt;</code> 的位置替换为要清除的文件。然后push repo</p>
+
+<pre><code>git push origin master --force
+</code></pre>
+
+<p>push 之前记得把清除的文件加到 .gitignore 里边，免得又 add 进去了。</p>
+
+<p>更多信息可以参考<a href="https://help.github.com/articles/remove-sensitive-data">这里</a>.</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2007/03/17/2007-03-17-1/" title="日志">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2007/03/06/2007-03-06-1/" title="开源的力量!开源可乐.">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2013/08/05/alasken-saw-mill/" title="油锯开板-- alaskan saw mill">Next &rarr;</a></li>
           
           
         </ul>
@@ -128,19 +139,27 @@ SD卡是手机用了半年的,记忆棒是相机的基本没有用过~<br>
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2007-03-07</span></div>
+    <div class="date"><span>2013-08-12</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#legacy-ref">legacy <span>279</span></a>
+  <a href="/categories/#binary-ref">binary <span>11</span></a>
 </li>
     
     </ul>
     <br>
     <h4>Tags</h4>
     <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#git-ref">git <span>1</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#tips-ref">tips <span>1</span></a>
+</li>
     
     </ul>
   </div>
