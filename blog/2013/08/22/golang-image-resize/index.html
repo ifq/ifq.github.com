@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>美历届总统民众支持率</title>
+    <title>Go语言中生成图片缩略图</title>
+  
+    <meta name="description" content="在Go 语言中快速生成缩略图">
   
     <meta name="author" content="靖天">
 
@@ -78,27 +80,55 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>美历届总统民众支持率 </h1>
+  <h1>Go语言中生成图片缩略图 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    
-<img class="imgbox" src="http://iwood.qiniudn.com/media/legacy/2a214cc234467e2be5dd3bd1.jpg" width="800" ></img>
+    <p>最近在实现自己的一个idea，做一个小app。是一个用移动设备浏览自己电脑上海量照片的应用。多方面考虑决定用Go语言来完成。目前看来Go语言还是十分高效的，一方面是执行效率，一方面是开发效率。目前写800行代码就能实现一半的功能了。也许用其他脚本语言可以更短，但是执行效率不一定有Go好。不过也不是说Go就万能了，碰到一些实际问题，照样歇菜，比如本文的缩略图生成。</p>
+
+<p>既然是图片应用，其中免不了生成缩略图这个处理。开始这个项目时，打算用pure Go来做，这样依赖简单点。于是开始找缩略图生成的GO实现。</p>
+
+<p>一开始找到了 <a href="https://github.com/nfnt/resize">https://github.com/nfnt/resize</a> 这个库，生成缩略图还可以选择各种算法，感觉不错。但实际跑起来才意识到不靠谱&ndash;速度太慢了。。5Mbyte的原图生成一个100像素宽的缩略图要6s（单核下）。我自己就有快100G的照片，要是用这个速度生成，小孩都会打酱油了。于是给原作者提了一个<a href="https://github.com/nfnt/resize/issues/5">issue</a>，不过他好像不在意。</p>
+
+<p>继续找，<a href="https://groups.google.com/forum/#!topic/golang-nuts/n4aQ2OU3OmE/discussion">在golang-nuts上找到一段代码</a>，实现比较简单，用间隔取点的方式生成小图。实际测试生成速度1.3s左右。由于这段代码比较简单，就自己理解了下，改了改，希望能够提升点速度。尝试改了修改索引坐标的方式，没有提升；后来发现image库默认是解析为YCbCr的格式，而生成缩略图的过程使用的RGBA的格式，中间的转换产生了不必要的消耗，于是生成过程全部用YCbCr，但是还是没有提升。看来要提升性能，得在更深层面进行优化了。目前的Go下的图形库还做不到。</p>
+
+<hr />
+
+<p>Go的实现不行，就开始投奔C了。C比Go快是一方面，另外C的图形库也比较多。一番查找有以下几个有印象的：</p>
+
+<ul>
+<li>freeimage，比较轻量级。</li>
+<li><a href="http://software.intel.com/en-us/intel-ipp">IPP</a>，Intel的库，网上介绍最快，算法和处理器上有优化，但是是付费的。</li>
+<li><a href="https://github.com/jcupitt/libvips">VIPS</a>，免费的，<a href="http://www.vips.ecs.soton.ac.uk/index.php?title=Speed_and_Memory_Use">而且貌似速度也不错</a>。</li>
+</ul>
+
+<p>于是最后选择了VIPS。对我来说，要在GO程序中整合C程序有两种途径。一种是使用Cgo库的代码级别的整合，另一种是exec调用c进程。在golang-nut上学习了一番，感觉Cgo还不是很成熟，而且比较麻烦。另一方面，VIPS已经提供了专用的小程序vipsthumbnail用来生成缩略图，所以就偷个懒直接调用这个程序生成得了。实测结果生成一张图需要0.3s左右，再起四个goroutine并行跑，速度杠杠的。唯一的缺憾是需要单独的vipsthumbnail程序，以及一堆动态库依赖文件。</p>
+
+<pre><code>cmd := exec.Command(&quot;vipsthumbnail&quot;, spath, &quot;-o&quot;, tgt, &quot;-s&quot;, strconv.Itoa(size[i].X))
+err := cmd.Run()
+if err != nil {
+    log.Println(&quot;run err:&quot;, spath, tgt, err)
+}
+</code></pre>
+
+<p>完整一点的程序在<a href="https://gist.github.com/ifq/6326773">gist上</a>。</p>
+
+<p>TFL。</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2009/01/21/2009-01-21-1/" title="第一次听说，狗不能吃巧克力">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2009/01/19/2009-01-19-1/" title="我回来鸟">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2013/08/12/git-del-file-from-repo/" title="如何从git repo里删除一个文件">Next &rarr;</a></li>
           
           
         </ul>
@@ -124,19 +154,27 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2009-01-20</span></div>
+    <div class="date"><span>2013-08-22</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#legacy-ref">legacy <span>279</span></a>
+  <a href="/categories/#binary-ref">binary <span>12</span></a>
 </li>
     
     </ul>
     <br>
     <h4>Tags</h4>
     <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#golang-ref">golang <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#image-processing-ref">image processing <span>1</span></a>
+</li>
     
     </ul>
   </div>

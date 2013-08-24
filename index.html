@@ -89,6 +89,19 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/2013/08/22/golang-image-resize/">Go语言中生成图片缩略图</a> <span class="date">2013-08-22</span></h3>
+
+  <p>最近在实现自己的一个idea，做一个小app。是一个用移动设备浏览自己电脑上海量照片的应用。多方面考虑决定用Go语言来完成。目前看来Go语言还是十分高效的，一方面是执行效率，一方面是开发效率。目前写800行代码就能实现一半的功能了。也许用其他脚本语言可以更短，但是执行效率不一定有Go好。不过也不是说Go就万能了，碰到一些实际问题，照样歇菜，比如本文的缩略图生成。</p>
+
+<p>既然是图片应用，其中免不了生成缩略图这个处理。开始这个项目时，打算用pure Go来做，这样依赖简单点。于是开始找缩略图生成的GO实现。</p>
+
+
+  <div class="more">
+    <a href="/blog/2013/08/22/golang-image-resize/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/blog/2013/08/12/git-del-file-from-repo/">如何从git repo里删除一个文件</a> <span class="date">2013-08-12</span></h3>
 
   <p>有时候一些敏感信息或者垃圾信息会被无意添加到git repo里想要删除。通过 <code>git rm filename</code> 只能表皮上删除一个文件，如果希望彻底删除需要其他的方式。</p>
@@ -242,35 +255,6 @@ emacs这东西，深啊。
   </div>
 </div>
 
-<div class="post">
-  <h3 class="title"><a href="/blog/2012/10/29/upgrade-octopress/">更新octopress博客系统后的笔记</a> <span class="date">2012-10-29</span></h3>
-
-  <p><p>
-octopress的博客系统使用有一段时间了。总体很满意，发博客也渐渐上手了。但是也还有些小问题困扰。比如导入过往blog之后，总共的post量比较大，每次generate的时候耗时很长；比如comment数量总是显示为零。
-</p>
-<p>
-关于前一个问题，目前还没有找到很好的解决方案，再等等看octopress自己会不会改进这个问题吧。关于comment数量的显示，查到这个bug实际已经解决，但是需要升级到2.1 的branch才行（之前是master分支,是2.0）。于是对博客系统进行了升级，过程这里不复述了，可以参考<a href="http://octopress.org/docs/updating/">官方指南</a> 。但是要注意merge的时候自己定义的一些改动会不会被覆盖，样式表、页脚链接之类。
-</p>
-<p>
-最终结果，comment的问题解决了，theme最后换回了classic界面。。大众一点也好，UI更友好。后边空闲的时候可以加点logo之类的装饰下。以下是几点memo，供参考。
-</p>
-<ul>
-<li>upgrade octopress <br/>
-  如果你使用 <code>git pull octopress 2.1</code> 更新时，提
-  示没有相应的 repo，那么说明你和我一样，需要以下的命令首先把octopress
-  添加到remote的repo列表。
-<code>
-git remote add octopress https://github.com/imathis/octopress.git
-</code>
-</li>
-</ul></p>
-
-
-  <div class="more">
-    <a href="/blog/2012/10/29/upgrade-octopress/" class="btn">read more..</a>
-  </div>
-</div>
-
 
 <center><a href="http://www.freedomain.co.nr/" title="Free Domain Name"><img src="http://ecozooa.imdrv.net/soof62.gif" alt="Free Domain Name" style="width:88px;height:31px;border:0;" /></a><a href='http://www.urlfan.com/?via=b' ><img src='http://i.urlfan.com/?r=7ec49' border=0></a><a href="https://plus.google.com/115086707443303900229" rel="publisher">在 Google+ 上关注我们</a></center>
 
@@ -300,11 +284,20 @@ git remote add octopress https://github.com/imathis/octopress.git
 </script>
 
     
-<script>
-    var _gaq=[['_setAccount','UA-33860711-1'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-33860711-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
   </body>
 </html>

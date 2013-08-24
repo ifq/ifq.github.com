@@ -249,7 +249,7 @@ If an AP is selected or marked, all the connected stations will also be selected
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#binary-ref">binary <span>11</span></a>
+  <a href="/categories/#binary-ref">binary <span>12</span></a>
 </li>
     
     </ul>
@@ -284,11 +284,20 @@ If an AP is selected or marked, all the connected stations will also be selected
 </script>
 
     
-<script>
-    var _gaq=[['_setAccount','UA-33860711-1'],['_trackPageview']];
-    (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-    g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-    s.parentNode.insertBefore(g,s)}(document,'script'));
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  var pluginUrl = '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-33860711-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
   </body>
 </html>
