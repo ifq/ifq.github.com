@@ -89,6 +89,19 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/2013/08/26/git-auto-completion/">git 命令行自动补全</a> <span class="date">2013-08-26</span></h3>
+
+  <p>本来是通过apt-get安装的git，但今天为了确认一个问题是不是git的bug，下载代码自己编译了一把，升级到1.8.x。（编译过程参考<a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">官方文档</a>，很简单）</p>
+
+<p>但是卸载掉之前的安装版本后发现git的自动补全功能没有了，<a href="http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks">官方文档</a>有介绍怎么弄，原来是一个脚本实现的。</p>
+
+
+  <div class="more">
+    <a href="/blog/2013/08/26/git-auto-completion/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/blog/2013/08/22/golang-image-resize/">Go语言中生成图片缩略图</a> <span class="date">2013-08-22</span></h3>
 
   <p>最近在实现自己的一个idea，做一个小app。是一个用移动设备浏览自己电脑上海量照片的应用。多方面考虑决定用Go语言来完成。目前看来Go语言还是十分高效的，一方面是执行效率，一方面是开发效率。目前写800行代码就能实现一半的功能了。也许用其他脚本语言可以更短，但是执行效率不一定有Go好。不过也不是说Go就万能了，碰到一些实际问题，照样歇菜，比如本文的缩略图生成。</p>
@@ -223,35 +236,6 @@ emacs这东西，深啊。
 
   <div class="more">
     <a href="/blog/2013/01/16/bedlamp/" class="btn">read more..</a>
-  </div>
-</div>
-
-<div class="post">
-  <h3 class="title"><a href="/blog/2012/11/10/ps-memo/">802.11协议节电学习memo</a> <span class="date">2012-11-10</span></h3>
-
-  <p><p>
-根据802.11-2012标准中，章节 <code>10.2 Power management</code> 中的描述，目前 802.11协议中存在的节电技术有以下几种：
-</p><table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
-<caption></caption>
-<colgroup><col class="left" /><col class="left" /><col class="left" />
-</colgroup>
-<thead>
-<tr><th scope="col" class="left">节电方式</th><th scope="col" class="left">介绍</th><th scope="col" class="left">引入时间</th></tr>
-</thead>
-<tbody>
-<tr><td class="left">PS-Poll</td><td class="left">通过PS-Poll报文通告AP发送缓存的报文</td><td class="left">802.11</td></tr>
-<tr><td class="left">S-APSD</td><td class="left">配合QoS工作，AP按照事先协商的时间片发送缓存报文</td><td class="left">802.11e</td></tr>
-<tr><td class="left">U-APSD</td><td class="left">配合QoS工作，STA发送Trigger报文通知AP发送缓存报文</td><td class="left">802.11e</td></tr>
-<tr><td class="left">PSMP</td><td class="left">AP通过发送单个PSMP帧i组织所有STA的缓存报文收发</td><td class="left">802.11n</td></tr>
-<tr><td class="left">TDSL Peer PSM</td><td class="left">未了解，SDK中未找到</td><td class="left">802.11n（？）</td></tr>
-<tr><td class="left">WNM Sleep</td><td class="left">协议中可选内容，SDK中未找到</td><td class="left">未知</td></tr>
-<tr><td class="left">SM Power Save</td><td class="left">通过关闭多条receive chains中一部分来省电</td><td class="left">802.11n</td></tr>
-</tbody>
-</table></p>
-
-
-  <div class="more">
-    <a href="/blog/2012/11/10/ps-memo/" class="btn">read more..</a>
   </div>
 </div>
 

@@ -4,6 +4,11 @@
 		<loc>http://iwood.co.nr/</loc>
 	</url>
 	<url>
+		<loc>http://iwood.co.nr/blog/2013/08/26/git-auto-completion/</loc>
+		<lastmod>2013-08-26</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>http://iwood.co.nr/blog/2013/08/22/golang-image-resize/</loc>
 		<lastmod>2013-08-22</lastmod>
 		<changefreq>weekly</changefreq>
