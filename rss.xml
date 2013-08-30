@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>一个热爱木工的软件工程师</title>
     <link>http://iwood.co.nr</link>
-    <pubDate>26 Aug 13 14:35 CST</pubDate>
+    <pubDate>30 Aug 13 13:47 CST</pubDate>
+    <item>
+      <title>羿宝两岁了</title>
+      <link>http://iwood.co.nr/blog/2013/08/29/yibao-birthday-2year/</link>
+      <pubDate>2013-08-29 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;自从改用&lt;a href=&#34;http://www.qiniu.com/&#34;&gt;外部存储服务&lt;/a&gt;，并且小改了gor自动导入图片后，发图轻松多了。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;儿子两岁了，发几张图show一下。&#xA;&lt;img alt=&#34;img: &#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/01-IMG_1817.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;Miula自制的蛋糕，小孩吃所以没奶油。这蜡烛。。不能点啊。。&#xA;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/02-IMG_1819.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/03-IMG_1823.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/04-IMG_1827.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;两岁了～&#xA;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/06-IMG_1830.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;开吃～&#xA;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/08-IMG_1930.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/09-IMG_1941.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/10-IMG_1944.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/11-IMG_1960.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;&lt;img alt=&#34;img:羿宝与蛋糕的故事&#34; width=&#34;600&#34; class=&#34;imgbox&#34; src=&#34;http://iwood.qiniudn.com/media/yibao-birthday-2year/12-IMG_1963.JPG&#34;&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;TFL.&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>git 命令行自动补全</title>
       <link>http://iwood.co.nr/blog/2013/08/26/git-auto-completion/</link>
