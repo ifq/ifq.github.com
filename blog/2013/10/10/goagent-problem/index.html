@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>git 命令行自动补全</title>
+    <title>goagent youtube problem</title>
   
-    <meta name="description" content="git 自动补全功能失效的修复">
+    <meta name="description" content="解决用goagent看youtube时卡住的问题">
   
     <meta name="author" content="靖天">
 
@@ -80,34 +80,30 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>git 命令行自动补全 </h1>
+  <h1>goagent youtube problem </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>本来是通过apt-get安装的git，但今天为了确认一个问题是不是git的bug，下载代码自己编译了一把，升级到1.8.x。（编译过程参考<a href="http://git-scm.com/book/en/Getting-Started-Installing-Git">官方文档</a>，很简单）</p>
+    <p>不知道从什么时候开始，goagent看youtube开始卡顿。观看的过程中会随机的停住，必须重新刷新然后鼠标点到之前的位置才能继续看，十分恼人。尝试了几次去解决，都没有搞定。今天又试了一下，貌似搞定了。</p>
 
-<p>但是卸载掉之前的安装版本后发现git的自动补全功能没有了，<a href="http://git-scm.com/book/en/Git-Basics-Tips-and-Tricks">官方文档</a>有介绍怎么弄，原来是一个脚本实现的。</p>
+<p>但是好像不是goagent自身的问题，而是配合其使用的firefox插件autoproxy的问题（之前用chrome时好像就没这问题，但是chrome又有播放flash卡顿的问题。。。）。升级goagent到3.0.4之后，使用firefox+autoproxy还是会出问题。然后关掉autoproxy，使用goagent的pac，设置到firefox的网络设置里。<code>http://localhost:8086/proxy.pac</code></p>
 
-<blockquote>
-<p>If you use the Bash shell, Git comes with a nice auto-completion script you can enable. Download the Git source code, and look in the contrib/completion directory; there should be a file called git-completion.bash. Copy this file to your home directory, and add this to your .bashrc file:</p>
-
-<p>source ~/.git-completion.bash</p>
-</blockquote>
+<p>貌似就没有问题了！！！眼泪哗哗滴～～～ 现在观察了一段时间是不会卡主了，有同样问题的朋友可以试试不用autoproxy。</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2013/08/29/yibao-birthday-2year/" title="羿宝两岁了">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2013/08/22/golang-image-resize/" title="Go语言中生成图片缩略图">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2013/08/29/yibao-birthday-2year/" title="羿宝两岁了">Next &rarr;</a></li>
           
           
         </ul>
@@ -133,7 +129,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2013-08-26</span></div>
+    <div class="date"><span>2013-10-10</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
@@ -148,11 +144,7 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/tags/#git-ref">git <span>2</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#tips-ref">tips <span>2</span></a>
+  <a href="/tags/#goagent-ref">goagent <span>1</span></a>
 </li>
     
     </ul>

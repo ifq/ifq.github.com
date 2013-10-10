@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>一个热爱木工的软件工程师</title>
     <link>http://iwood.co.nr</link>
-    <pubDate>30 Aug 13 13:47 CST</pubDate>
+    <pubDate>10 Oct 13 14:35 CST</pubDate>
+    <item>
+      <title>goagent youtube problem</title>
+      <link>http://iwood.co.nr/blog/2013/10/10/goagent-problem/</link>
+      <pubDate>2013-10-10 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;不知道从什么时候开始，goagent看youtube开始卡顿。观看的过程中会随机的停住，必须重新刷新然后鼠标点到之前的位置才能继续看，十分恼人。尝试了几次去解决，都没有搞定。今天又试了一下，貌似搞定了。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;但是好像不是goagent自身的问题，而是配合其使用的firefox插件autoproxy的问题（之前用chrome时好像就没这问题，但是chrome又有播放flash卡顿的问题。。。）。升级goagent到3.0.4之后，使用firefox+autoproxy还是会出问题。然后关掉autoproxy，使用goagent的pac，设置到firefox的网络设置里。&lt;code&gt;http://localhost:8086/proxy.pac&lt;/code&gt;&lt;/p&gt;&#xA;&#xA;&lt;p&gt;貌似就没有问题了！！！眼泪哗哗滴～～～ 现在观察了一段时间是不会卡主了，有同样问题的朋友可以试试不用autoproxy。&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>羿宝两岁了</title>
       <link>http://iwood.co.nr/blog/2013/08/29/yibao-birthday-2year/</link>
