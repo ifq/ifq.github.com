@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>一个热爱木工的软件工程师</title>
     <link>http://iwood.co.nr</link>
-    <pubDate>10 Oct 13 14:35 CST</pubDate>
+    <pubDate>10 Mar 14 19:40 CST</pubDate>
+    <item>
+      <title>emacs 学习进行时</title>
+      <link>http://iwood.co.nr/blog/2014/03/10/emacs-learning/</link>
+      <pubDate>2014-03-10 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;最近又添加了几个minor mode, 试用之后感觉不错，相见恨晚。如果你也还没用，赶紧用。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;expand-region&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;在代码中快速框选region，从小到大。比如选取当前的symbol，再按一下选当前表达式，再按一下选括号外。。。可大可小，很方便。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;不过在大的c代码中还有性能问题。我提了一个issue到 git 上，正在跟踪。&#xA;&lt;a href=&#34;https://github.com/magnars/expand-region.el/issues/134&#34;&gt;https://github.com/magnars/expand-region.el/issues/134&lt;/a&gt;&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;multi cursors&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;选取相似的点，建立多个cursor，同时编辑。感觉很好用的样子，虽然刚装上还没有体会到便利。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;ace jump&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;这个很酷！mind blow～ 跳转到屏幕的任何位置，不只是当前的buffer。我绑定到 &lt;code&gt;M-m&lt;/code&gt; 键，按了之后再按一个字母，是我想跳转位置的首字母，然后屏幕灰下来，首字母符合我选择的点会高亮，并以此变成abcdef，再按想去的点对应的字母就过去了。描述起来有点困难。。。用过就知道，肯定好用。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;recentf&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;这个简单，就是最近访问过的N个文件，列出来。&lt;/p&gt;&#xA;&#xA;&lt;h3&gt;desktop save mode&lt;/h3&gt;&#xA;&#xA;&lt;p&gt;这个也简单,保存当前打开的所有文件，下次启动emacs时继续打开。&lt;/p&gt;&#xA;</description>
+    </item>
     <item>
       <title>goagent youtube problem</title>
       <link>http://iwood.co.nr/blog/2013/10/10/goagent-problem/</link>
