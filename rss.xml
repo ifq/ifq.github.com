@@ -2,7 +2,13 @@
 <rss version="2.0">  <channel>
     <title>一个热爱木工的软件工程师</title>
     <link>http://iwood.co.nr</link>
-    <pubDate>10 Mar 14 19:40 CST</pubDate>
+    <pubDate>16 Mar 14 14:05 CST</pubDate>
+    <item>
+      <title>cscope增加对go文件的index支持</title>
+      <link>http://iwood.co.nr/blog/2014/03/16/cscope-go-index/</link>
+      <pubDate>2014-03-16 12:00:00 +0800</pubDate>
+      <description>&lt;p&gt;golang本身提供的godef工具可以解决大部分代码检索的问题，但是有时候需要全局搜索的时候还是需要其他工具帮忙。cscope工具主要用在C语言下，但是go语言的语法类似，一定程度上也支持。&lt;/p&gt;&#xA;&#xA;&lt;p&gt;但是cscope在文件索引时默认不会找go文件，每次手动搞不方便。其实就改一行就可以了。&lt;/p&gt;&#xA;&#xA;&lt;pre&gt;&lt;code&gt;+++ /usr/bin/cscope-indexer 2014-03-15 14:10:40.696994116 +0800&#xA;@@ -137,7 +137,7 @@&#xA;    find $DIR \( -type f -o -type l \)&#xA;     fi&#xA; ) | \&#xA;-    egrep -i &#39;\.([chly](xx|pp)*|cc|hh)$&#39; | \&#xA;+    egrep -i &#39;\.([chly](xx|pp)*|cc|hh|go)$&#39; | \&#xA;     sed -e &#39;/\/CVS\//d&#39; -e &#39;/\/RCS\//d&#39; -e &#39;s/^\.\///&#39; | \&#xA;     sort &amp;gt; $LIST_FILE&#xA;&lt;/code&gt;&lt;/pre&gt;&#xA;</description>
+    </item>
     <item>
       <title>emacs 学习进行时</title>
       <link>http://iwood.co.nr/blog/2014/03/10/emacs-learning/</link>

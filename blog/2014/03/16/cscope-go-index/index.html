@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>用 sed 替换二进制内容</title>
+    <title>cscope增加对go文件的index支持</title>
+  
+    <meta name="description" content="cscope增加对go文件的index支持">
   
     <meta name="author" content="靖天">
 
@@ -78,44 +80,39 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>用 sed 替换二进制内容 </h1>
+  <h1>cscope增加对go文件的index支持 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    
-<p>
-  文件里有一堆 0，在每个字符后边。需要去掉。
-</p>
+    <p>golang本身提供的godef工具可以解决大部分代码检索的问题，但是有时候需要全局搜索的时候还是需要其他工具帮忙。cscope工具主要用在C语言下，但是go语言的语法类似，一定程度上也支持。</p>
 
+<p>但是cscope在文件索引时默认不会找go文件，每次手动搞不方便。其实就改一行就可以了。</p>
 
-<pre class="example">00000010: 4f00 4300 4100 4c00 5f00 4d00 4100 4300  O.C.A.L._.M.A.C.
-00000020: 4800 4900 4e00 4500 5c00 4800 4100 5200  H.I.N.E.\.H.A.R.
-00000030: 4400 5700 4100 5200 4500 5d00 0d00 0a00  D.W.A.R.E.].....
-00000040: 0d00 0a00 5b00 4800 4b00 4500 5900 5f00  ....[.H.K.E.Y._.  
-</pre>
-
-
-
-<pre class="example">sed -i 's|\x00||g' filename
-</pre>
-
-
-
+<pre><code>+++ /usr/bin/cscope-indexer 2014-03-15 14:10:40.696994116 +0800
+@@ -137,7 +137,7 @@
+    find $DIR \( -type f -o -type l \)
+     fi
+ ) | \
+-    egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
++    egrep -i '\.([chly](xx|pp)*|cc|hh|go)$' | \
+     sed -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
+     sort &gt; $LIST_FILE
+</code></pre>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2012/07/29/helloworld/" title="hello world - NO.-1 post">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2012/03/19/tshark-cmd/" title="tshark 抓包 memo">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2014/03/10/emacs-learning/" title="emacs 学习进行时">Next &rarr;</a></li>
           
           
         </ul>
@@ -141,7 +138,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2012-03-27</span></div>
+    <div class="date"><span>2014-03-16</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
@@ -154,6 +151,14 @@
     <br>
     <h4>Tags</h4>
     <ul class="tag_box">
+    
+      <li>
+  <a href="/tags/#emacs-ref">emacs <span>2</span></a>
+</li>
+    
+      <li>
+  <a href="/tags/#golang-ref">golang <span>3</span></a>
+</li>
     
     </ul>
   </div>
