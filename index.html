@@ -89,6 +89,34 @@
 
 
 <div class="post">
+  <h3 class="title"><a href="/blog/2014/04/20/emacs-global-database/">设定 emacs 中 cscope 的固定搜索目录</a> <span class="date">2014-04-20</span></h3>
+
+  <p>组件化的开发中，各个组件不在一个目录，但互相有依赖。有时候想看一个api的定义，因为不在当前组件目录下，cscope搜索不到。</p>
+
+<p>看了下emacs的帮助文件，定制以下cscope 的 <code>cscope-database-regexps</code> 就可以实现搜索固定位置的功能。</p>
+
+<pre><code>(setq cscope-database-regexps
+  '(
+    ( &quot;/xxx/.*sdk&quot;
+      ( t )
+      ( &quot;/work/src/xxx/ef&quot;)
+      ( &quot;/work/src/xxx/yyy/tags/1.0.0/code&quot;)
+      )
+    ( &quot;/yyy/.*bsp&quot;
+      ( t )
+      ( &quot;/work/src/xxx/ef&quot;)
+      )
+    )
+  )
+</code></pre>
+
+
+  <div class="more">
+    <a href="/blog/2014/04/20/emacs-global-database/" class="btn">read more..</a>
+  </div>
+</div>
+
+<div class="post">
   <h3 class="title"><a href="/blog/2014/03/16/cscope-go-index/">cscope增加对go文件的index支持</a> <span class="date">2014-03-16</span></h3>
 
   <p>golang本身提供的godef工具可以解决大部分代码检索的问题，但是有时候需要全局搜索的时候还是需要其他工具帮忙。cscope工具主要用在C语言下，但是go语言的语法类似，一定程度上也支持。</p>
@@ -208,19 +236,6 @@
 
   <div class="more">
     <a href="/blog/2013/08/02/carving-knife-1/" class="btn">read more..</a>
-  </div>
-</div>
-
-<div class="post">
-  <h3 class="title"><a href="/blog/2013/07/29/test-gor/">正式切换到gor</a> <span class="date">2013-07-29</span></h3>
-
-  <p>切换到github做博客也有将近一年时间了。之前一直用的是octopress作为博客的引擎。其他都挺好，有一个问题很头大：<strong>慢！</strong></p>
-
-<p>加上从baidu那边转过来的博客（当然，大部分是废话，<em>但是废话放30年后说不定会有价值</em> ）,目前有309篇博客。每次用octopress来生成的时候需要4,5分钟，尽管可以用小技巧单独先生成个别文件用来preview，但是还是慢。。让人没有了更新的欲望。多次在网上探寻加速的方法均无果。最近在折腾blog的时候，又等的发狂了，在网上搜索一通，发现了<a href="https://github.com/wendal/gor">gor</a>，试用之后精神为之一震啊！</p>
-
-
-  <div class="more">
-    <a href="/blog/2013/07/29/test-gor/" class="btn">read more..</a>
   </div>
 </div>
 

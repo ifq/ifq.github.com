@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>正式切换到gor</title>
+    <title>设定 emacs 中 cscope 的固定搜索目录</title>
+  
+    <meta name="description" content="如何在emacs 的 cscope 中制定全局的搜索位置">
   
     <meta name="author" content="靖天">
 
@@ -78,50 +80,49 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>正式切换到gor </h1>
+  <h1>设定 emacs 中 cscope 的固定搜索目录 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>切换到github做博客也有将近一年时间了。之前一直用的是octopress作为博客的引擎。其他都挺好，有一个问题很头大：<strong>慢！</strong></p>
+    <p>组件化的开发中，各个组件不在一个目录，但互相有依赖。有时候想看一个api的定义，因为不在当前组件目录下，cscope搜索不到。</p>
 
-<p>加上从baidu那边转过来的博客（当然，大部分是废话，<em>但是废话放30年后说不定会有价值</em> ）,目前有309篇博客。每次用octopress来生成的时候需要4,5分钟，尽管可以用小技巧单独先生成个别文件用来preview，但是还是慢。。让人没有了更新的欲望。多次在网上探寻加速的方法均无果。最近在折腾blog的时候，又等的发狂了，在网上搜索一通，发现了<a href="https://github.com/wendal/gor">gor</a>，试用之后精神为之一震啊！</p>
+<p>看了下emacs的帮助文件，定制以下cscope 的 <code>cscope-database-regexps</code> 就可以实现搜索固定位置的功能。</p>
 
-<p>同样300+篇博客，用ruby的octopress需要4,5分钟，而使用<a href="http://golang.org">go</a>的gor只需要数秒！！。这种差距也让我对go语言产生了兴趣（最近正在疯狂学习中）。看来国人也能出精品啊～一定得支持，于是果断换用gor。</p>
+<pre><code>(setq cscope-database-regexps
+  '(
+    ( &quot;/xxx/.*sdk&quot;
+      ( t )
+      ( &quot;/work/src/xxx/ef&quot;)
+      ( &quot;/work/src/xxx/yyy/tags/1.0.0/code&quot;)
+      )
+    ( &quot;/yyy/.*bsp&quot;
+      ( t )
+      ( &quot;/work/src/xxx/ef&quot;)
+      )
+    )
+  )
+</code></pre>
 
-<p><img class="imgbox" src="http://iwood.qiniudn.com/media/frontpage.png"  alt="go语言形象代言人" width="300" /></p>
+<p>上边的例子中，如果当前使用 cscope 的目录符合 <code>/xxx/.*sdk</code> ，则搜索完当前目录还会搜索 <code>/work/src/xxx/ef</code> 和 <code>/work/src/xxx/yyy/tags/1.0.0/code</code> 目录。</p>
 
-<h2><a style="display: block;" name="切换准备" href="#切换准备"></a>切换准备</h2>
+<p>emacs 里查看 <code>cscope-database-regexps</code> 的帮助，会找到更高级的用法。</p>
 
-<h3>补齐yml标签</h3>
-
-<p>octopress下，识别博客的日期是通过文件名前边包含年月日来实现的。而gor下面得在文件头部插入 <code>date</code> 标签，因此需要做下转换。本来用sed之类的写个脚本就搞定了，但是为了学习go语言，强迫用go写了一个<a href="https://gist.github.com/6103416">转换的脚本</a>。</p>
-
-<h3>图片文件重整</h3>
-
-<p>图片问题其实不是切换到gor直接导致的，而是在熟悉gor的过程中和<a href="https://github.com/wendal/gor/issues/32">别人讨论的成果</a>。有人提到图片也放到github中管理会十分臃肿，应该放到外部管理。思考了以下也对，随便加点图片就200M了，长此以往肯定是不行的。加之国内的网速上传github本来就比较慢，所以还是分开管理比较好。</p>
-
-<p>找寻外部存储空间，一开始只找了在线相册，不是不支持外链，就是国内访问有问题。后来找到<a href="https://gist.github.com/6103416">国内的云存储平台七牛</a>，解决了所有问题。不但外链没有问题（专门就是干这个的），而且上传也很方便（linux下有命令行工具批量同步），而且外链的地址也和本地目录树相同，方便生成<code>&lt;img&gt;</code>。</p>
-
-<h3>permalink问题</h3>
-
-<p>octopress下面，permalink设置为 <code>/blog/:year/:month/:day/:title/</code> 的时候，实际生成的地址是以文件名中出去日期的部分结尾，而在gor下面，则是以文章中实际的<code>title:</code>标题。这会导致链接地址与以前不一致。查了一下，改用 <code>/blog/:year/:month/:day/:filename/</code>，并把 md 文件里的日期部分去掉，从而保持url不变。</p>
-
-<p>TFL。</p>
+<p>TFL.</p>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2013/08/02/carving-knife-1/" title="第一把自制的刻刀">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2013/05/12/jewelrybox-for-wk/" title="一个小盒子的诞生">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2014/03/16/cscope-go-index/" title="cscope增加对go文件的index支持">Next &rarr;</a></li>
           
           
         </ul>
@@ -147,7 +148,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2013-07-29</span></div>
+    <div class="date"><span>2014-04-20</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
@@ -162,11 +163,11 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/tags/#gor-ref">gor <span>1</span></a>
+  <a href="/tags/#emacs-ref">emacs <span>3</span></a>
 </li>
     
       <li>
-  <a href="/tags/#golang-ref">golang <span>3</span></a>
+  <a href="/tags/#cscope-ref">cscope <span>1</span></a>
 </li>
     
     </ul>
