@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>cscope增加对go文件的index支持</title>
+    <title>upgrade to mint17</title>
   
-    <meta name="description" content="cscope增加对go文件的index支持">
+    <meta name="description" content="升级到linux mint17啦">
   
     <meta name="author" content="靖天">
 
@@ -80,39 +80,56 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>cscope增加对go文件的index支持 </h1>
+  <h1>upgrade to mint17 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>golang本身提供的godef工具可以解决大部分代码检索的问题，但是有时候需要全局搜索的时候还是需要其他工具帮忙。cscope工具主要用在C语言下，但是go语言的语法类似，一定程度上也支持。</p>
+    <p>升级到 linux mint 17 MATE 的版本了。整好了之后感觉不错，用了一天有几个地方感觉比较舒服。
+- 之前用 mint 14 的时候关机、重启经常有问题。现在好了，关机很顺畅。（在virtualbox中运行）
+- 界面更舒服了。
+- 输入法顺带升级到 sogou 1.0，好用了很多。
+- 在virtualbox下的网络更稳定了。</p>
 
-<p>但是cscope在文件索引时默认不会找go文件，每次手动搞不方便。其实就改一行就可以了。</p>
+<p>本来14用着也能满足工作需要，花功夫升级到17算是力气没白花。遇到的几个问题记录一下。</p>
 
-<pre><code>+++ /usr/bin/cscope-indexer 2014-03-15 14:10:40.696994116 +0800
-@@ -137,7 +137,7 @@
-    find $DIR \( -type f -o -type l \)
-     fi
- ) | \
--    egrep -i '\.([chly](xx|pp)*|cc|hh)$' | \
-+    egrep -i '\.([chly](xx|pp)*|cc|hh|go)$' | \
-     sed -e '/\/CVS\//d' -e '/\/RCS\//d' -e 's/^\.\///' | \
-     sort &gt; $LIST_FILE
+<h2><a style="display: block;" name="升级系统，保留home" href="#升级系统，保留home"></a>升级系统，保留HOME</h2>
+
+<p>由于跨越了几个版本，觉得重新安装的方式比较稳妥。但是想保留之前的文件，不影响开发工作。还好之前工作相关的内容都在<code>/work</code>目录下，单独mount了一个盘。唯独home文件夹之前没有注意，这次需要折腾下。</p>
+
+<p>virtualbox下还是比较好弄的，比host上直接装好折腾。大致的过程就是创建一个新的虚拟盘，mount到久系统的<code>/home2</code>目录下，把<code>/home</code>的内容拷贝过去。然后在新系统上mount上去，再选择性的拷贝到新系统的<code>/home</code>下。然后在吧所有内容拷贝到<code>home2</code>目录。然后修改<code>/etc/fstab</code>,把这个盘单独mount到<code>/home</code>目录即可。方法比较笨，不过也算搞定了。不知道还有没有更好的方法。</p>
+
+<p>这样环境基本上平滑切换了，没有做太多的配置新的系统就可以用了。</p>
+
+<h2><a style="display: block;" name="virtualbox-share目录自动加载问题" href="#virtualbox-share目录自动加载问题"></a>virtualbox share目录自动加载问题</h2>
+
+<p>手动mount没有问题，添加到fstab文件中加载就不行。调试了下发现时fstab加载的时候，vboxsf这个必要的组建还没有加载。用了个简单的方法，不把这个mount加载到fstab里了，而是放到<code>/etc/rc.local</code>中：</p>
+
+<pre><code>mount.vboxsf -w -o uid=1000,gid=1000 ifqdata /media/sf_ifqdata/
+mount.vboxsf -w -o uid=1000,gid=1000 temp /media/sf_temp/
 </code></pre>
+
+<h2><a style="display: block;" name="搜狗输入法黑框问题" href="#搜狗输入法黑框问题"></a>搜狗输入法黑框问题</h2>
+
+<p>linux终于有体面的输入法了！搜狗1.0的输入法，和win下的基本上差不多了。用起来舒坦了很多。安装过程就不说了，搜狗官网有。关键装好之后总是有个1cm见方的黑框在屏幕上浮动，让人很不爽。花了几个小时没搞定，网上搜一下<code>linux 搜狗 黑框</code>就搞定了。有好几个方法，我用的这个:</p>
+
+<blockquote>
+<p>打开“控制中心”，在“桌面设置”之“窗口“中勾选“Use compositing”即可。</p>
+</blockquote>
 
     <hr>
     <div class="pagination">
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2014/04/20/emacs-global-database/" title="设定 emacs 中 cscope 的固定搜索目录">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2014/03/10/emacs-learning/" title="emacs 学习进行时">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2014/04/20/golang-inherit-difference/" title="golang 里继承的区别">Next &rarr;</a></li>
           
           
         </ul>
@@ -138,7 +155,7 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2014-03-16</span></div>
+    <div class="date"><span>2014-06-17</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
@@ -153,11 +170,7 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/tags/#emacs-ref">emacs <span>3</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#golang-ref">golang <span>4</span></a>
+  <a href="/tags/#linux-mint-ref">linux mint <span>1</span></a>
 </li>
     
     </ul>

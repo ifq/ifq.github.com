@@ -4,6 +4,16 @@
 		<loc>http://iwood.co.nr/</loc>
 	</url>
 	<url>
+		<loc>http://iwood.co.nr/blog/2014/06/17/upgrade-to-mint17/</loc>
+		<lastmod>2014-06-17</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://iwood.co.nr/blog/2014/04/20/golang-inherit-difference/</loc>
+		<lastmod>2014-04-20</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
 		<loc>http://iwood.co.nr/blog/2014/04/20/emacs-global-database/</loc>
 		<lastmod>2014-04-20</lastmod>
 		<changefreq>weekly</changefreq>
