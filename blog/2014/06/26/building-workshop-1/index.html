@@ -2,7 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>正式切换到gor</title>
+    <title>木工房建设进行时之一</title>
+  
+    <meta name="description" content="不知不觉开始搞电动工具的木工房了。">
   
     <meta name="author" content="靖天">
 
@@ -78,34 +80,50 @@
 
       <div class="content">
         <div class="page-header">
-  <h1>正式切换到gor </h1>
+  <h1>木工房建设进行时之一 </h1>
 </div>
 
 <div class="row">
   <div class="span8">
-    <p>切换到github做博客也有将近一年时间了。之前一直用的是octopress作为博客的引擎。其他都挺好，有一个问题很头大：<strong>慢！</strong></p>
+    <p>之前一直坚持手动工具，一个是没地方摆弄电动工具，一个是想学学手动的方法。但是手动的实在太慢了，加上时间不多，一年做不出来几样。一不小心推刨子还把手伤了，得了网球肘，后边干活的时候总是心有余悸。</p>
 
-<p>加上从baidu那边转过来的博客（当然，大部分是废话，<em>但是废话放30年后说不定会有价值</em> ）,目前有309篇博客。每次用octopress来生成的时候需要4,5分钟，尽管可以用小技巧单独先生成个别文件用来preview，但是还是慢。。让人没有了更新的欲望。多次在网上探寻加速的方法均无果。最近在折腾blog的时候，又等的发狂了，在网上搜索一通，发现了<a href="https://github.com/wendal/gor">gor</a>，试用之后精神为之一震啊！</p>
+<p>踏破铁鞋无觅处，得来全不费工夫。河对面找到N件家里的空房。于是开始了木工房的筹划。开始只是想上一两件电动工具，后来随着一个project的进行，逐渐开始扩大想法。目前构思的，就是下面这张图了。</p>
 
-<p>同样300+篇博客，用ruby的octopress需要4,5分钟，而使用<a href="http://golang.org">go</a>的gor只需要数秒！！。这种差距也让我对go语言产生了兴趣（最近正在疯狂学习中）。看来国人也能出精品啊～一定得支持，于是果断换用gor。</p>
+<p><img alt="img:木工房规划 " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140625_135725.jpg"></p>
 
-<p><img class="imgbox" src="http://iwood.qiniudn.com/media/frontpage.png"  alt="go语言形象代言人" width="300" /></p>
+<p>最先上阵的钢铁14寸带锯：</p>
 
-<h2><a style="display: block;" name="切换准备" href="#切换准备"></a>切换准备</h2>
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140529_140246.jpg"></p>
 
-<h3>补齐yml标签</h3>
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140529_140312.jpg"></p>
 
-<p>octopress下，识别博客的日期是通过文件名前边包含年月日来实现的。而gor下面得在文件头部插入 <code>date</code> 标签，因此需要做下转换。本来用sed之类的写个脚本就搞定了，但是为了学习go语言，强迫用go写了一个<a href="https://gist.github.com/6103416">转换的脚本</a>。</p>
+<p>接下来是钢铁的小平刨，有点小，正在考虑怎么办。试试看延长下outfeed能不能改善把。
+<img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140607_145103.jpg"></p>
 
-<h3>图片文件重整</h3>
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140607_145110.jpg"></p>
 
-<p>图片问题其实不是切换到gor直接导致的，而是在熟悉gor的过程中和<a href="https://github.com/wendal/gor/issues/32">别人讨论的成果</a>。有人提到图片也放到github中管理会十分臃肿，应该放到外部管理。思考了以下也对，随便加点图片就200M了，长此以往肯定是不行的。加之国内的网速上传github本来就比较慢，所以还是分开管理比较好。</p>
+<p>接着是洋二的 router， 和自制的靠山。靠山的微调还需要改进。
+<img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140615_144829.jpg"></p>
 
-<p>找寻外部存储空间，一开始只找了在线相册，不是不支持外链，就是国内访问有问题。后来找到<a href="http://www.qiniu.com/">国内的云存储平台七牛</a>，解决了所有问题。不但外链没有问题（专门就是干这个的），而且上传也很方便（linux下有命令行工具批量同步），而且外链的地址也和本地目录树相同，方便生成<code>&lt;img&gt;</code>。</p>
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140623_211552(1).jpg"></p>
 
-<h3>permalink问题</h3>
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140623_211622.jpg"></p>
 
-<p>octopress下面，permalink设置为 <code>/blog/:year/:month/:day/:title/</code> 的时候，实际生成的地址是以文件名中出去日期的部分结尾，而在gor下面，则是以文章中实际的<code>title:</code>标题。这会导致链接地址与以前不一致。查了一下，改用 <code>/blog/:year/:month/:day/:filename/</code>，并把 md 文件里的日期部分去掉，从而保持url不变。</p>
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140623_211639(1).jpg">p</p>
+
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140623_211746(1).jpg"></p>
+
+<p>敢情没有集尘器就没法搞电动啊。见识了带锯rasaw时的弥漫烟雾，赶紧去搞了个集尘器。
+<img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140625_211602.jpg"></p>
+
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140625_211619.jpg"></p>
+
+<p>最后是在福州收的一件二手的jet的台剧。网上新的要1800， 这个有2年了，收的800。那人基本没怎么用，丢在那里生锈。还得再处理处理才能用顺畅了。
+<img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140625_211711.jpg"></p>
+
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140625_211736.jpg"></p>
+
+<p><img alt="img: " width="600" class="imgbox" src="http://iwood.qiniudn.com/media/building-workshop-1/IMG_20140625_211751.jpg"></p>
 
 <p>TFL。</p>
 
@@ -114,14 +132,14 @@
       <ul>
         <ul>
           
-            <li class="prev"><a href="/blog/2013/08/02/carving-knife-1/" title="第一把自制的刻刀">&larr; Previous</a></li>
           
+            <li class="prev disabled"><a>&larr; Previous</a></li>
           
 
             <li><a href="/archive">Archive</a></li>
 
           
-            <li class="next"><a href="/blog/2013/05/12/jewelrybox-for-wk/" title="一个小盒子的诞生">Next &rarr;</a></li>
+            <li class="next"><a href="/blog/2014/06/17/upgrade-to-mint17/" title="upgrade to mint17">Next &rarr;</a></li>
           
           
         </ul>
@@ -147,13 +165,13 @@
   
   <div class="span4">
     <h4>Published</h4>
-    <div class="date"><span>2013-07-29</span></div>
+    <div class="date"><span>2014-06-26</span></div>
     <br>
     <h4>Categories</h4>
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#binary-ref">binary <span>19</span></a>
+  <a href="/categories/#woodworking-ref">woodworking <span>16</span></a>
 </li>
     
     </ul>
@@ -162,11 +180,7 @@
     <ul class="tag_box">
     
       <li>
-  <a href="/tags/#gor-ref">gor <span>1</span></a>
-</li>
-    
-      <li>
-  <a href="/tags/#golang-ref">golang <span>4</span></a>
+  <a href="/tags/#workshop-ref">workshop <span>1</span></a>
 </li>
     
     </ul>
