@@ -93,7 +93,7 @@
 
 <p>本来14用着也能满足工作需要，花功夫升级到17算是力气没白花。遇到的几个问题记录一下。</p>
 
-<h2><a style="display: block;" name="升级系统，保留home" href="#升级系统，保留home"></a>升级系统，保留HOME</h2>
+<h2>升级系统，保留HOME</h2>
 
 <p>由于跨越了几个版本，觉得重新安装的方式比较稳妥。但是想保留之前的文件，不影响开发工作。还好之前工作相关的内容都在<code>/work</code>目录下，单独mount了一个盘。唯独home文件夹之前没有注意，这次需要折腾下。</p>
 
@@ -101,7 +101,7 @@
 
 <p>这样环境基本上平滑切换了，没有做太多的配置新的系统就可以用了。</p>
 
-<h2><a style="display: block;" name="virtualbox-share目录自动加载问题" href="#virtualbox-share目录自动加载问题"></a>virtualbox share目录自动加载问题</h2>
+<h2>virtualbox share目录自动加载问题</h2>
 
 <p>手动mount没有问题，添加到fstab文件中加载就不行。调试了下发现时fstab加载的时候，vboxsf这个必要的组建还没有加载。用了个简单的方法，不把这个mount加载到fstab里了，而是放到<code>/etc/rc.local</code>中：</p>
 
@@ -109,7 +109,7 @@
 mount.vboxsf -w -o uid=1000,gid=1000 temp /media/sf_temp/
 </code></pre>
 
-<h2><a style="display: block;" name="搜狗输入法黑框问题" href="#搜狗输入法黑框问题"></a>搜狗输入法黑框问题</h2>
+<h2>搜狗输入法黑框问题</h2>
 
 <p>linux终于有体面的输入法了！搜狗1.0的输入法，和win下的基本上差不多了。用起来舒坦了很多。安装过程就不说了，搜狗官网有。关键装好之后总是有个1cm见方的黑框在屏幕上浮动，让人很不爽。花了几个小时没搞定，网上搜一下<code>linux 搜狗 黑框</code>就搞定了。有好几个方法，我用的这个:</p>
 
@@ -161,7 +161,7 @@ mount.vboxsf -w -o uid=1000,gid=1000 temp /media/sf_temp/
     <ul class="tag_box">
     
       <li>
-  <a href="/categories/#binary-ref">binary <span>19</span></a>
+  <a href="/categories/#binary-ref">binary <span>20</span></a>
 </li>
     
     </ul>
