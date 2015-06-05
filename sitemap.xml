@@ -4,8 +4,13 @@
 		<loc>http://iwood.co.nr/</loc>
 	</url>
 	<url>
-		<loc>http://iwood.co.nr/blog/2015/03/29/2015-05-10-hualin-third/</loc>
-		<lastmod>2015-03-29</lastmod>
+		<loc>http://iwood.co.nr/blog/2015/04/12/2015-06-05-luoyang-1/</loc>
+		<lastmod>2015-04-12</lastmod>
+		<changefreq>weekly</changefreq>
+	</url>
+	<url>
+		<loc>http://iwood.co.nr/blog/2015/04/04/2015-06-05-pintai-gashira/</loc>
+		<lastmod>2015-04-04</lastmod>
 		<changefreq>weekly</changefreq>
 	</url>
 	<url>
